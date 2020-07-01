@@ -1,0 +1,678 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+   line-height: 1.5;
+}
+ol, ul, nav {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.2;
+}
+* {
+    box-sizing: border-box;
+    /* outline: 1px solid #f00; */
+}
+img{
+    vertical-align: middle;
+}
+/* reset end */
+
+/* common start */
+:root{
+    --hover-color:#f29787;
+    --icon-color:#f29787;
+    --shop-color:#f29787;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.section{
+    padding: 50px 0;
+}
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
+.clearfix{
+    clear: both;
+}
+.p-relative{
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.assess{
+    margin-bottom: 10px;
+}
+.fa-star{
+    font-size: 10px;
+    color: #ffc43b;
+}
+.c-gray{
+    color: #aaa;
+}
+.productTitle a{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+    transition: .2s;
+}
+.productTitle a:hover{
+    color: var(--hover-color);
+}
+.price{
+    font-weight: 900;
+    font-size: 14px;
+}
+.discount{
+    font-size: 12px;
+    color: #f00;
+    font-weight: 700;
+}
+.originalPrice{
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #aaa;
+}
+.arrowUp,
+.arrowMove{
+    text-align: center;
+}
+.arrowUp a,
+.arrowMove a{
+    display: block;
+    padding: 0 15px;
+    line-height: 36px;
+}
+.arrowUp .iconDown,
+.arrowMove .iconDown{
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    z-index: -1;
+}
+.arrowUp .iconTop,
+.arrowMove .iconTop{
+   transition: .5s; 
+}
+.arrowUp  a:hover .iconTop,
+.arrowMove  a:hover .iconTop{
+    transform: translateY(-50px);
+    opacity: 0;
+}
+.arrowUp  a:hover .iconTop ~ .iconDown
+{
+    transform: translateY(-40px);
+    opacity: 1;
+    transition: .5s;
+    color: var(--hover-color);
+    z-index: 0;
+}
+.arrowMove  a:hover .iconTop ~ .iconDown{
+    transform: translateY(-43px);
+    opacity: 1;
+    transition: .5s;
+    color: var(--hover-color);
+    z-index: 0;
+}
+.border-r a:after{
+    content: "";
+    position: absolute;
+    height: 20px;
+    top: 8px;
+    right: 0;
+    border-right: 1px solid #aaa;
+}
+/* common end */
+
+
+/* header start */
+
+.header h1{
+    width: 20%;
+    font-size: 0;
+}
+.header .navBar{
+    width: 55%;
+    text-align: center;
+}
+.header .navBar h2{
+    font-size: 0;
+}
+.header .navBar li{
+    /* line-height: 67px; */
+    display: inline-block;
+}
+.header .navBar li a{
+    /* line-height: 1; */
+    padding: 20px;
+    display: block;
+}
+.header .userIcon li{
+    display: inline-block;
+}
+.header .userIcon{
+    width: 25%;
+    text-align: right;
+}
+.header .userIcon li a{
+    display: block;
+    line-height: 1;
+    padding: 25px 15px;
+    color: #000;
+}
+/* .header .userIcon .searchBar{
+    width: 150px;
+    position: absolute;
+    top: 24px;
+    left: 35px;
+    border: 1px solid var(--icon-color);
+    opacity: 0;
+    outline: none;
+    z-index: -1;
+}
+
+.header .userIcon .trans{
+    transition: .3s;
+}
+.header .userIcon .trans:hover{
+    transform: translateX(-130px);
+}
+.header .userIcon .trans:hover > .searchBar{
+    opacity: 1;
+    transition: .6s;
+} */
+.header .navBar li a:hover,
+.header .userIcon li a:hover{
+    color: var(--hover-color);
+}
+/* header end */
+
+/* banner start */
+.banner{
+    padding-top: 0;
+}
+.banner .bannerAd{
+    width: 72.5%;
+}
+.banner .bannerAd img{
+    width: 100%;
+}
+.banner .bannerHot{
+    width: 25%;
+}
+.banner .bannerHot img{
+    width: 100%;
+}
+.banner .bannerHot li{
+    overflow: hidden;
+}
+.banner .bannerHot li:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.2);
+    z-index: 1;
+    transform: translate(-100%,-100%);
+    transition: .3s;
+}
+.banner .bannerHot li:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.2);
+    z-index: 1;
+    transform: translate(100%,100%);
+    transition: .3s;
+}
+.banner .bannerHot li:hover:before,
+.banner .bannerHot li:hover::after{
+    transform: translate(0,0);
+}
+.banner .bannerHot li:first-child{
+    margin-bottom: 45px;
+}
+.banner .bannerHot .bannerHotTxt{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+}
+.banner .bannerHotTxt h3{
+    width: 100px;
+    margin-bottom: 20px;
+}
+.banner .bannerHotTxt a{
+    display: block;
+    width: 60px;
+    font-size: 12px;
+    border-bottom: 1px solid var(--shop-color);
+    color: var(--shop-color);
+}
+/* banner end */
+
+
+/* payShip start */
+
+.payShip li{
+    width: 300px;
+    padding: 0 10px;
+}
+.payShip .icon{
+    line-height: 38px;
+    font-size: 24px;
+}
+.payShip .icon .fas{
+    color: var(--icon-color);
+}
+.payShip .payShipTxt{
+    border-right: 1px solid #aaa;
+}
+.payShip .payShipTxt a{
+    display: inline-block;
+    width: 240px;
+    padding: 0 20px 0 30px;
+}
+.payShip li:last-child .payShipTxt{
+    border-right: none;
+}
+.payShip .payShipTxt h3 a{
+    font-size: 13px;
+    transition: .2s;
+}
+.payShip .payShipTxt h3 a:hover{
+    color: var(--hover-color);
+}
+.payShip .payShipTxt h4 a{
+    font-size: 12px;
+    font-weight: 400;
+    color: #aaa;
+}
+
+/* payShip end */
+
+
+/* recent & union start */
+.recentArrival .recentTitle {
+    margin-bottom: 30px;
+}
+.recentArrival .recentTitle h2{
+    font-size: 30px;
+    font-weight: 900;
+}
+.recentArrival .recentTitle li{
+    line-height: 36px;
+}
+.recentArrival .recentTitle li a{
+    display: block;
+    padding: 0 15px;
+}
+.recentArrival .recentTitle li:nth-child(1) a:hover, 
+.recentArrival .recentTitle li:nth-child(2) a:hover,
+.recentArrival .recentTitle li:nth-child(3) a:hover{
+    color: var(--hover-color);
+}
+.recentArrival .productList li,
+.specialProducts .listItem li{
+    margin-right: 30px;
+}
+.recentArrival .productList li:nth-child(4),
+.specialProducts .listItem li:nth-child(4){
+    margin-right: 0;
+}
+.recentArrival .productList li label,
+.specialProducts .listItem li label{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.recentArrival .productList li img,
+.specialProducts .listItem li img{
+    margin-bottom: 20px;
+}
+
+.recentArrival .productTxt{
+    margin-bottom: 10px;
+}
+.productUnion h2{
+    font-size: 0;
+}
+.productUnion .hotTxt,
+.productUnion .asideMegaTxt{
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.productUnion .asideNewTxt{
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+.productUnion .asideMegaDeal{
+    margin-bottom: 30px;
+}
+.productUnion label span{
+    font-size: 12px;
+    color: var(--shop-color);
+}
+.productUnion .hotBigDeal{
+    width: 61%;
+    margin-bottom: 1.5%;
+}
+.productUnion img{
+    width: 100%;
+}
+.productUnion .asideProductList{
+    width: 36%;
+}
+.productUnion .hotList{
+    width: 29.5%;
+}
+.productUnion .hotList:first-child{
+    margin-right: 2%;
+}
+
+/* recent & union end */
+
+
+/* specialProducts start */
+.specialProducts .specialTitle{
+    margin-bottom: 30px;
+}
+.specialProducts h2{
+    font-size: 30px;
+    font-weight: 900;
+}
+/* specialProducts end */
+
+
+/* blogSuggestion start */
+.blogSuggestion .blogTitle{
+    margin-bottom: 30px;
+}
+.blogSuggestion .blogTitle h2{
+    font-size: 30px;
+    font-weight: 900;
+}
+.blogSuggestion .blogItems li{
+    width: 32%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+.blogSuggestion .blogContact{
+    display: block;
+}
+.blogSuggestion li:nth-child(3){
+    margin-right: 0;
+}
+.blogSuggestion li img{
+    width: 100%;
+}
+.blogSuggestion .blogContent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: .2s;
+    text-align: center;
+}
+.blogSuggestion .blogIcon{
+    margin-top: 65%;
+    margin-bottom: 40%;
+}
+.blogSuggestion .blogIcon a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    background-color: var(--icon-color);
+    line-height: 45px;
+    text-align: center;
+    transition: .2s;
+}
+.blogSuggestion .blogIcon a:hover{
+    background-color: #000;
+}
+.blogSuggestion .blogTxt{
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    text-align: left;
+}
+.blogSuggestion .blogTxt h4{
+    color: var(--shop-color);
+    margin-bottom: 10px;
+}
+.blogSuggestion li:hover .blogContent{
+    opacity: 1;
+    z-index: 0;
+}
+/* blogSuggestion end */
+
+
+/* sort start */
+.sort h3{
+    font-size: 0;
+}
+.sort .arrowIcon .fas{
+    font-size: 35px;
+    line-height: 87px;
+}
+.sort ul li:nth-child(2),
+.sort ul li:nth-child(3),
+.sort ul li:nth-child(4),
+.sort ul li:nth-child(5),
+.sort ul li:nth-child(6){
+    width: 120px;
+    margin-right: 80px;
+}
+.sort ul li img{
+    width: 100%;
+}
+.sort ul li:first-child,
+.sort ul li:nth-child(7){
+    margin-right: 9px;
+}
+.sort ul li:last-child{
+    margin-right: 0;
+}
+/* sort end */
+
+/* information start */
+.information{
+    background-color: #eee;
+    padding: 50px 0;
+}
+.information .informationList .stroreInfo,
+.information .informationList .client{
+    width: 30%;
+}
+.information .informationList .products,
+.information .informationList .ourCompany{
+    width: 20%;
+}
+.information h3{
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.information .informationList .aboutIcon{
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+.information .informationList .aboutIcon .fas{
+    font-size: 16px;
+    color: var(--icon-color);
+}
+.information .informationList .addressTxt{
+    width: 90%;
+}
+.information .informationList a{
+    display: block;
+    margin-bottom: 15px;
+    transition: .2s;
+}
+.information .informationList a:hover{
+    color: var(--hover-color);
+}
+.information .informationList .footerArrowIcon h3{
+    /* margin-right: 150px; */
+}
+.information .informationList .footerArrowIcon a{
+    margin-bottom: 0;
+}
+.information .informationList .footerArrowIcon .fas{
+    font-size: 20px;
+}
+.information .informationList .quate{
+    font-size: 30px;
+    color: #aaa;
+}
+.information .informationList .userTxt{
+    width: 80%;
+    padding: 0 15px;
+}
+.information .informationList .userTxt p{
+    margin-bottom: 15px;
+}
+/* information end */
+
+/* subscribe start */
+.subscribe h2{
+    font-size: 0;
+}
+.subscribe ul li:first-child{
+    width: 300px;
+}
+.subscribe ul li:first-child p:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-right: 1px solid #aaa;
+    top: 0;
+    right: -55px;    
+}
+.subscribe ul li{
+    line-height: 40px;
+}
+.subscribe .mailIcon{
+    margin-right: 10px;
+}
+.subscribe li input{
+    line-height: 40px;
+    font-size: 16px;
+    padding-left: 15px;
+    width: 467px;
+    outline: none;
+    border: none;
+    background-color: #eee;
+}
+.subscribe ul li:nth-child(2) p{
+    margin-right: 50px;
+}
+.subscribe .send .far{
+    display: block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    background-color: var(--icon-color);
+    color: #fff;
+}
+/* subscribe end */
+
+/* footer start */
+.footer h2{
+    font-size: 0;
+}
+.footer ul{
+    text-align: center;
+}
+.footer li{
+    display: inline-block;
+}
+.footer .creditList li a{
+    display: block;
+    margin: 5px;
+}
+.footer .footerMenu li a{
+    display: block;
+    margin: 10px 0;
+    padding: 0 15px;
+    font-size: 14px;
+    border-left: 1px solid #ccc;
+}
+.footer .footerMenu li:first-child a{
+    border-left: none;
+}
+.footer p{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.footer p a:hover{
+    color: var(--hover-color);
+}
+/* footer end */
